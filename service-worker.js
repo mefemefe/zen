@@ -1,5 +1,5 @@
 const CACHE_NAME = 'zen-v1';
-const ASSETS = ['/', '/icon.png', '/index.html', '/styles.css', '/script.js', '/manifest.json'];
+const ASSETS = ['/zen/', '/zen/icon.png', '/zen/index.html', '/zen/styles.css', '/zen/script.js', '/zen/manifest.json'];
 
 // Install event: cache essential files
 self.addEventListener('install', event => {
