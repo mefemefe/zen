@@ -1,14 +1,18 @@
 const CACHE_NAME = 'zen-v1';
-const ASSETS = ['/'];
+const ASSETS = ['/', '/icon.png', '/index.html', '/styles.css', '/script.js', '/manifest.json'];
 
 // Install event: cache essential files
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(ASSETS);
+      return cache.addAll(ASSETS)
+        .catch(err => {
+          console.error('SW install failed', err);
+        });
     })
   );
 });
+
 
 // Activate event: clean up old caches
 self.addEventListener('activate', event => {
